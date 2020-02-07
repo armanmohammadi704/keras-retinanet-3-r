@@ -215,7 +215,7 @@ class CSVGenerator(Generator):
         image2=read_image_bgr(self.image_path(image_index1))
 
         gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
-        gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY))
+        gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
 
         img = np.zeros((576,768,3))
         img[:,:,0]= gray2
