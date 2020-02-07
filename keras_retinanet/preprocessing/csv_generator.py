@@ -208,28 +208,19 @@ class CSVGenerator(Generator):
 
         if  img_path[-6:] == '01.jpg':
             image_index1 = image_index
-            image_index2 = image_index+1
-
-        elif img_path[-6:] == '25.jpg':
-            image_index1 = image_index-1
-            image_index2 = image_index
-
         else:
             image_index1 = image_index-1
-            image_index2 = image_index+1
 
         image1=read_image_bgr(self.image_path(image_index))
         image2=read_image_bgr(self.image_path(image_index1))
-        image3=read_image_bgr(self.image_path(image_index2))
 
         gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
-        gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
-        gray3 = cv2.cvtColor(image3, cv2.COLOR_BGR2GRAY)
+        gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY))
 
         img = np.zeros((576,768,3))
         img[:,:,0]= gray2
         img[:,:,1]= gray1
-        img[:,:,2]= gray3
+        img[:,:,2]= gray2
         
         return img
 
